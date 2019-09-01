@@ -1,0 +1,15 @@
+<%= form_for @key do |f| %>
+  <p>
+    <%= f.label :site_name,"サイト名" %>
+    <%= f.text_field :site_name %>
+  </p>
+  <p>
+    <%= f.label :account_id,"ログイン時アカウントIDまたはユーザー名" %>
+    <%= f.text_field :account_id %>
+  </p>
+  <p>
+    <%= f.label :account_key,"ログイン時パスワード" %>
+    <%= f.text_field :account_key %>
+  </p>
+  <%= f.submit %>
+<% end %>

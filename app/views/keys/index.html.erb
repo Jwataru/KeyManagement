@@ -1,0 +1,6 @@
+<h1>登録サイト一覧</h1>
+
+<% @keys.each do |key| %>
+  <hr>
+  <p><span>登録サイト名: </span><%=link_to key.site_name, key_path(key.id) %>
+<% end %>

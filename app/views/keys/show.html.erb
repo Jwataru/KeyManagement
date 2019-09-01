@@ -1,0 +1,9 @@
+<h1>サイトアカウント情報</h1>
+
+<p><span>サイト名: </span><%= @key.site_name %></p>
+<p><span>ログイン時ユーザー名: </span><%= @key.account_id %></p>
+<p><span>ログイン時パスワード: </span><%= @key.account_key %></p>
+<p>
+<%=link_to '登録内容変更', edit_key_path(@key.id) %>
+<%=link_to '削除', key_path(@key.id), method: :delete, data: { confirm: '削除しますか？' } %>
+</p>
