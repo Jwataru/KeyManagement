@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  root 'users#index'
-  devise_for :users
+  devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
+  
+  devise_scope :user do
+    authenticated :user do
+      root :to => 'users#index', as: :authenticated_root
+    end
+    unauthenticated :user do
+      root :to => 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
 
   resources :users
   resources :keys
